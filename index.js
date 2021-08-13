@@ -11,6 +11,9 @@ app.get("/", (req, res) => {
   res.send("welcome to Amazon API");
 });
 
+app.listen(2000, () => {
+  console.log("server started on PORT 2000");
+});
 // GET product details
 app.get("/products/:productId", async (req, res) => {
   const { productId } = req.params;
@@ -72,8 +75,4 @@ app.get("/search/:searchQuery", async (req, res) => {
   } catch (error) {
     res.json(error);
   }
-});
-
-app.listen(2000, () => {
-  console.log("server started on PORT 2000");
 });
